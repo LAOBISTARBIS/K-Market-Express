@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Market Express | Tienda Coreana</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        /* Sección de inicio */
+        #inicio .banner {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #inicio h2 {
+            font-size: 3em;
+        }
+
+        #inicio p {
+            font-size: 1.5em;
+        }
+
+        #inicio .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #inicio .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Estilo para los productos */
+        #productos {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #productos h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .productos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .producto {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .producto h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+
+        .producto p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .producto button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .producto button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Formulario de contacto */
+        #contacto {
+            padding: 50px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        #contacto form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contacto input, #contacto textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #contacto button {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contacto button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Carrito de compras */
+        #carrito {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        #carrito:hover {
+            background-color: #2980b9;
+        }
+
+        /* Sección de ofertas */
+        #ofertas {
+            padding: 50px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .ofertas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .oferta {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .oferta img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .oferta h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+
+        .oferta p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <h1>K-Market Express</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio">
+        <div class="banner">
+            <h2>Bienvenido a K-Market Express</h2>
+            <p>Descubre los mejores productos coreanos en un solo lugar</p>
+            <a href="#productos" class="btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Sección Productos -->
+    <section id="productos">
+        <h2>Productos Destacados</h2>
+        <div class="productos-container">
+            <div class="producto">
+                <img src="Ramen Picantes.jpeg" alt="Ramen Picantes">
+                <h3>Ramen Picantes</h3>
+                <p>$26.99</p>
+                <button class="add-to-cart" data-name="Ramen Picantes" data-price="26.99">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="onigari.jpeg" alt="Onigari">
+                <h3>Onigari</h3>
+                <p>$45.50</p>
+                <button class="add-to-cart" data-name="Onigari" data-price="45.50">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Topokki.jpeg" alt="Topokki">
+                <h3>Topokki</h3>
+                <p>$45.50</p>
+                <button class="add-to-cart" data-name="Topokki" data-price="45.50">Añadir al Carrito</button>
+            </div>
+<div class="producto">
+    <img src="Sushis.jpeg" alt="Sushi">
+    <h3>Sushi</h3>
+    <p>$85</p>
+    <button class="add-to-cart" data-name="Sushi" data-price="85">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Dumplings.jpeg" alt="Dumplings">
+    <h3>Dumplings</h3>
+    <p>$120</p>
+    <button class="add-to-cart" data-name="Dumplings" data-price="120">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Hot Dogs.jpeg" alt="Hot Dogs">
+    <h3>Hot Dogs</h3>
+    <p>$45</p>
+    <button class="add-to-cart" data-name="Hot Dogs" data-price="45">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Papas Fritas.jpeg" alt="Papas Fritas">
+    <h3>Papas Fritas</h3>
+    <p>$27.50</p>
+    <button class="add-to-cart" data-name="Papas Fritas" data-price="27.50">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Galletas.jpeg" alt="Galletas">
+    <h3>Galletas</h3>
+    <p>$22.50</p>
+    <button class="add-to-cart" data-name="Galletas" data-price="22.50">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Frutos Secos.jpeg" alt="Frutos Secos">
+    <h3>Frutos Secos</h3>
+    <p>$35</p>
+    <button class="add-to-cart" data-name="Frutos Secos" data-price="35">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Chocolates.jpeg" alt="Chocolates">
+    <h3>Chocolates</h3>
+    <p>$85</p>
+    <button class="add-to-cart" data-name="Chocolates" data-price="85">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Golosinas.jpg" alt="Golosinas">
+    <h3>Golosinas</h3>
+    <p>$25</p>
+    <button class="add-to-cart" data-name="Golosinas" data-price="25">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Barritas De Cereal.jpg" alt="Barritas De Cereal">
+    <h3>Barritas De Cereal</h3>
+    <p>$20</p>
+    <button class="add-to-cart" data-name="Barritas De Cereal" data-price="20">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Panes.jpg" alt="Panes">
+    <h3>Panes</h3>
+    <p>$55</p>
+    <button class="add-to-cart" data-name="Panes" data-price="55">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Bollos.jpg" alt="Bollos">
+    <h3>Bollos</h3>
+    <p>$35</p>
+    <button class="add-to-cart" data-name="Bollos" data-price="35">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Pasteles.jpg" alt="Bollos">
+    <h3>Pasteles</h3>
+    <p>$130</p>
+    <button class="add-to-cart" data-name="Pasteles" data-price="130">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="croissant.jpg" alt="croissant">
+    <h3>croissant</h3>
+    <p>$55</p>
+    <button class="add-to-cart" data-name="croissant" data-price="55">Añadir al Carrito</button>
+</div>
+
+
+<div class="producto">
+    <img src="Donas.jpg" alt="Donas">
+    <h3>Donas</h3>
+    <p>$35</p>
+    <button class="add-to-cart" data-name="Donas" data-price="35">Añadir al Carrito</button>
+</div>
+
+<div class="producto">
+    <img src="Pan Nube.jpg" alt="Pan Nube">
+    <h3>Pan Nube</h3>
+    <p>$85</p>
+    <button class="add-to-cart" data-name="Pan Nube" data-price="85">Añadir al Carrito</button>
+</div>
+
+   <div class="producto">
+                <img src="jabones.jpg" alt="Jabón">
+                <h3>Jabón</h3>
+                <p>30.00</p>
+                <button class="add-to-cart" data-name="Jabón" data-price="30.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="Shampoo.jpg" alt="Shampoo">
+                <h3>Shampoo</h3>
+                <p>$45.00</p>
+              <button class="add-to-cart" data-name="Shampoo" data-price="45.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="ACONDICIONADOR.webp">
+                <h3>Acondicionador</h3>
+                <p>$60.00</p>
+                <button class="add-to-cart" data-name="Acondicionador" data-price="60.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="RASTRILLO.jpg">
+                <h3>Rastrillo</h3>
+                <p>$15.00</p>
+                <button class="add-to-cart" data-name="Rastrillo" data-price="15.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="TOALLAS HUMEDAS.jpg" alt="TOALLAS HUMEDAS">              
+                <h3>Toallas Humedas</h3>
+                <p>$45.00</p>
+                <button class="add-to-cart" data-name="Toallas Húmedas" data-price="45.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="PASTA DENTAL.jpg" alt="Pasta Dental">
+                <h3>Pasta Dental</h3>
+                <p>$35.00</p>
+              <button class="add-to-cart" data-name="Pasta Dental" data-price="35.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="cerveza.jpg" alt="Cerveza">
+                <h3>Cerveza</h3>
+                <p>$45.00</p>
+              <button class="add-to-cart" data-name="Cerveza" data-price="45.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="vino.jpg" alt="Vino">
+                <h3>Vino</h3>
+                <p>$370.00</p>
+             <button class="add-to-cart" data-name="Vino" data-price="370.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="licor.jpg" alt="Licor">
+                <h3>Licor</h3>
+                <p>$280.00</p>
+                <button class="add-to-cart" data-name="Licor" data-price="280.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="vodka.jpg" alt="Vodka">
+                <h3>Vodka</h3>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Vodka" data-price="350.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="ron.jpg" alt="Ron">
+                <h3>Ron</h3>
+                <p>$350.00</p>
+                <button class="add-to-cart" data-name="Ron" data-price="350.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="boligrafo.jpeg" alt="Bolígrafo">
+                <h3>Bolígrafo</h3>
+                <p>$6.00</p>
+                <button class="add-to-cart" data-name="Bolígrafo" data-price="6.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="lapices.jpeg" alt="Lápices">
+                <h3>Lápices</h3>
+                <p>$4.50</p>
+                <button class="add-to-cart" data-name="Lápices" data-price="4.50">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="cuadernos.jpeg" alt="Cuadernos">
+                <h3>Cuadernos</h3>
+                <p>$25</p>
+                <button class="add-to-cart" data-name="Cuadernos" data-price="25.00">Añadir al Carrito</button>
+            </div>
+
+ <div class="producto">
+                <img src="cuadernos.jpeg" alt="Cuadernos">
+                <h3>Cuadernos</h3>
+                <p>$55.00</p>
+                <button class="add-to-cart" data-name="Cuadernos" data-price="55.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="carpetas.jpeg" alt="Carpetas">
+                <h3>Carpetas</h3>
+                <p>$3.50</p>
+                <button class="add-to-cart" data-name="Carpetas" data-price="3.50">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="copias.jpeg" alt="Copias">
+                <h3>Copias</h3>
+                <p>$1.00</p>
+                <button class="add-to-cart" data-name="Copias" data-price="1.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+               <img src="detergentes.jpeg" alt="Detergente">
+                <h3>Detergente</h3>
+                <p>$25.00</p>
+                <button class="add-to-cart" data-name="Detergente" data-price="25.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="limpiadores multiusos.jpeg" alt="Limpiador Multiusos">
+                <h3>Limpiador Multiusos</h3>
+                <p>$70.00</p>
+                <button class="add-to-cart" data-name="Limpiador Multiusos" data-price="70.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="esponjas.jpeg" alt="Esponjas">
+                <h3>Esponjas</h3>
+                <p>$20.50</p>
+                <button class="add-to-cart" data-name="Esponjas" data-price="20.50">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="desinfectantes.jpeg" alt="Desinfectantes">
+                <h3>Desinfectantes</h3>
+                <p>$35.00</p>
+                <button class="add-to-cart" data-name="Desinfectantes" data-price="35.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="filtros de cafe.jpeg" alt="Filtros de Café">
+                <h3>Filtros de Café</h3>
+                <p>$30.00</p>
+                <button class="add-to-cart" data-name="Filtros de Café" data-price="30.00">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="servilletas.jpeg" alt="Servilletas">
+                <h3>Servilletas</h3>
+                <p>$20.50</p>
+                <button class="add-to-cart" data-name="Servilletas" data-price="20.50">Añadir al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="papel higienico.jpeg" alt="Papel Higiénico">
+                <h3>Papel Higiénico</h3>
+                <p>$15.00</p>
+                <button class="add-to-cart" data-name="Papel Higiénico" data-price="15.00">Añadir al Carrito</
+
+        </div>
+    </section>
+
+    <!-- Sección Ofertas -->
+    <section id="ofertas">
+        <h2>Ofertas Especiales</h2>
+        <div class="ofertas-container">
+            <div class="oferta">
+                <img src="Ramen Picantes.jpeg" alt="Oferta Producto 1">
+                <h3>Ramen en oferta</h3>
+                <p>$15.00</p>
+                <button class="add-to-cart" data-name="Ramen en oferta" data-price="15.00">Añadir al Carrito</button>
+            </div>
+            <div class="oferta">
+                <img src="onigari.jpeg" alt="Oferta Producto 2">
+                <h3>Onigari en oferta</h3>
+                <p>$18.00</p>
+                <button class="add-to-cart" data-name="Onigari en oferta" data-price="18.00">Añadir al Carrito</button>
+            </div>
+            <div class="oferta">
+                <img src="Sushis.jpeg" alt="Oferta Producto 3">
+                <h3>Sushis en oferta</h3>
+                <p>$70.00</p>
+                <button class="add-to-cart" data-name="Sushis en oferta" data-price="70.00">Añadir al Carrito</button>
+            </div>
+            <div class="oferta">
+                <img src="Dumplings.jpeg" alt="Oferta Producto 4">
+                <h3>Dumplings en oferta</h3>
+                <p>$100.00</p>
+                <button class="add-to-cart" data-name="Dumplings en oferta" data-price="100.00">Añadir al Carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes dudas? Escríbenos</p>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+            <button type="button" onclick="window.location.href='#inicio';">Regreso</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 K-Market Express | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Carrito de compras -->
+    <div id="carrito">Carrito: 0 productos - Total: $0.00</div>
+
+    <script>
+        let carrito = [];
+        const carritoDiv = document.getElementById('carrito');
+        const botones = document.querySelectorAll('.add-to-cart');
+
+        botones.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const nombre = e.target.getAttribute('data-name');
+                const precio = parseFloat(e.target.getAttribute('data-price'));
+
+                carrito.push({ nombre, precio });
+                actualizarCarrito();
+            });
+        });
+
+        function actualizarCarrito() {
+            const total = carrito.reduce((acc, item) => acc + item.precio, 0).toFixed(2);
+            carritoDiv.textContent = `Carrito: ${carrito.length} productos - Total: $${total}`;
+        }
+    </script>
+
+</body>
+</html>
